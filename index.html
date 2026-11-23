@@ -78,6 +78,7 @@ section{position:relative;padding:110px 0}
 .head p{color:var(--muted);font-size:18px;margin:16px 0 0}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .card{position:relative;border:1px solid var(--line);background:var(--card);border-radius:var(--r);padding:28px;transition:border-color .3s,transform .3s,background .3s;overflow:hidden}
 .card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(242,169,0,.10),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover{border-color:rgba(242,169,0,.35);transform:translateY(-3px)}
@@ -127,6 +128,24 @@ section{position:relative;padding:110px 0}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
 
+/* whatsapp flutuante e chamadas */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:999px;background:#25D366;color:#06210f;font-weight:600;font-size:15px;box-shadow:0 12px 30px -8px rgba(37,211,102,.55);transition:.25s}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(37,211,102,.7)}
+.wa-float svg{width:24px;height:24px}
+.wa-float::after{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid #25D366;animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.25)}}
+.inline-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;border:1px dashed rgba(242,169,0,.35);border-radius:16px;padding:20px 24px;background:rgba(242,169,0,.04)}
+.inline-cta p{margin:0;font-size:17px;color:#C9D1E0}
+.btn-wa{background:#25D366;color:#06210f}
+.btn-wa:hover{background:#3be07a;box-shadow:0 8px 28px -6px rgba(37,211,102,.55);transform:translateY(-1px)}
+.benefit .big{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin:16px 0 8px}
+.name-grid{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.name-tower{display:flex;flex-direction:column;align-items:center;gap:14px}
+.name-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.name-row .card h3{margin-top:6px}
+@media (max-width:960px){.name-grid{grid-template-columns:1fr}.name-tower{display:none}}
+@media (max-width:640px){.name-row{grid-template-columns:1fr}.wa-float span{display:none}.wa-float{padding:0;width:56px;justify-content:center}}
+
 /* andon do logo */
 .lamp{animation:lamp 3.2s ease-in-out infinite}
 
@@ -141,7 +160,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 @media (max-width:960px){
   .hero-grid,.about{grid-template-columns:1fr}
-  .grid3{grid-template-columns:1fr 1fr}
+  .grid3,.grid4{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr;row-gap:40px}
   .steps::before{display:none}
   .links a:not(.btn){display:none}
@@ -150,7 +169,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 @media (max-width:640px){
   section{padding:76px 0}
   .hero{padding:64px 0 80px}
-  .grid3,.grid2,.steps,.creds{grid-template-columns:1fr}
+  .grid3,.grid2,.grid4,.steps,.creds{grid-template-columns:1fr}
   .final{padding:52px 22px}
   .brand{font-size:19px}
 }
@@ -170,7 +189,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <a href="#cases">Resultados</a>
       <a href="#como">Como funciona</a>
       <a href="#sobre">Sobre</a>
-      <a href="#contato" class="btn btn-amber">Conversar</a>
+      <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Conversar</a>
     </nav>
   </div>
 </header>
@@ -186,7 +205,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <h1>Processos que <span class="grad">rodam sozinhos.</span></h1>
       <p class="lead">Automatizo planilhas, rotinas e fluxos de trabalho e crio sistemas de gestão sob medida para qualquer processo. Antes de automatizar, melhoro o processo com Lean Six Sigma. Onde faz sentido, uso IA para tirar o trabalho repetitivo da sua equipe.</p>
       <div class="cta">
-        <a href="#contato" class="btn btn-amber">Quero automatizar um processo
+        <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Quero automatizar um processo
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#cases" class="btn btn-ghost">Ver o que já foi feito</a>
       </div>
@@ -236,6 +255,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   </div>
 </section>
 
+<!-- BENEFÍCIOS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">O que muda quando o processo roda sozinho</span>
+      <h2>Menos tempo na planilha, mais tempo decidindo.</h2>
+    </div>
+    <div class="grid4">
+      <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg></div><div class="big">Horas de volta</div><p>O que a equipe copiava, colava e conferia toda semana passa a acontecer sozinho.</p></div>
+      <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div class="big">Menos erro</div><p>Sem redigitação, some o número trocado, a linha esquecida e a fórmula quebrada.</p></div>
+      <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div class="big">Um número só</div><p>Todo mundo olha o mesmo dado, atualizado sozinho, e decide com fato, não com achismo.</p></div>
+      <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></svg></div><div class="big">Processo que não para</div><p>O fluxo fica no sistema, não na cabeça de alguém. Férias e trocas de equipe deixam de travar o trabalho.</p></div>
+    </div>
+    <div class="inline-cta reveal"><p>Reconheceu alguma dessas dores na sua empresa?</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Conversar no WhatsApp</a></div>
+  </div>
+</section>
+
 <!-- SERVIÇOS -->
 <section id="servicos">
   <div class="glow" style="width:500px;height:500px;background:rgba(242,169,0,.08);top:10%;left:-200px"></div>
@@ -252,6 +288,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 13h3M19 13h3"/></svg></div><h3>Automação com IA</h3><p>Quando a tarefa exige ler e entender, como e-mails, documentos e pedidos, um agente de IA faz o trabalho e separa para você só o que precisa de decisão.</p><div class="meta">→ rotinas que rodam sozinhas</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3 3 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.7"/></svg></div><h3>IA na prática para equipes</h3><p>Workshop para a equipe usar IA no dia a dia com segurança, com os casos e documentos da própria empresa.</p><div class="meta">→ 3 a 4 horas</div></div>
     </div>
+    <div class="inline-cta reveal"><p>Não sabe por onde começar? Me conta qual tarefa mais toma tempo hoje.</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Falar com a Débora</a></div>
   </div>
 </section>
 
@@ -272,6 +309,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="card case big reveal"><span class="label">lean six sigma</span><h3>Projetos Master Black Belt</h3><p>Programa de melhoria com três frentes, qualidade, logística e produção, pelo método DMAIC. Liderei a frente de qualidade.</p>
         <div class="stat"><span class="grad">≈ R$ 1,9 mi</span></div><p class="mono" style="font-size:12.5px;margin-top:2px">em redução de custos no programa</p>
         <ul><li>Liderança da frente de qualidade</li><li>Método DMAIC do diagnóstico ao controle</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE ANDON SIGMA -->
+<section id="nome">
+  <div class="wrap name-grid">
+    <div class="name-tower reveal" aria-hidden="true">
+      <svg viewBox="0 0 100 100" width="200" height="200"><rect x="36" y="6" width="28" height="5" rx="2.5" fill="#E8ECF4"/><g class="lamp"><rect x="31" y="14" width="38" height="26" rx="6" fill="#F2A900"/><text x="50" y="34.5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="25" font-weight="700" fill="#14213D">σ</text></g><rect x="33" y="44" width="34" height="15" rx="4" fill="none" stroke="#E8ECF4" stroke-width="3.5"/><rect x="33" y="63" width="34" height="15" rx="4" fill="none" stroke="#E8ECF4" stroke-width="3.5"/><rect x="46.5" y="80" width="7" height="9" fill="#E8ECF4"/><rect x="34" y="89" width="32" height="5" rx="2.5" fill="#E8ECF4"/></svg>
+    </div>
+    <div class="reveal">
+      <span class="kicker">Por que Andon Sigma</span>
+      <h2 style="font-size:clamp(30px,4vw,44px);margin-top:16px">Mostrar o problema na hora. Resolver na causa.</h2>
+      <div class="name-row">
+        <div class="card"><span class="label mono" style="color:var(--amber);font-size:12px">ANDON</span><h3>A luz que avisa</h3><p>Na fábrica, o andon é a torre de luz que acende quando algo sai do normal. Ninguém precisa adivinhar onde está o problema.</p></div>
+        <div class="card"><span class="label mono" style="color:var(--amber);font-size:12px">SIGMA</span><h3>O método que corrige</h3><p>Sigma vem do Six Sigma, o método para reduzir erro e variação atacando a causa, não o sintoma.</p></div>
+      </div>
+      <p style="color:#C9D1E0;font-size:17px;margin:24px 0 0">A Andon Sigma leva essa lógica para o escritório: seus processos ficam visíveis, automáticos e com alerta quando algo foge do padrão.</p>
     </div>
   </div>
 </section>
@@ -325,7 +380,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <h2>Qual processo você gostaria que rodasse sozinho?</h2>
       <p>Me conta em 20 minutos, por vídeo, sem compromisso. Eu digo se dá para automatizar e quanto tempo você ganharia.</p>
       <div class="cta">
-        <a class="btn btn-amber" href="https://wa.me/5541920011012" target="_blank" rel="noopener">
+        <a class="btn btn-amber" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
           WhatsApp (41) 92001-1012</a>
         <a class="btn btn-ghost" href="mailto:contato@andonsigma.com.br">contato@andonsigma.com.br</a>
@@ -334,6 +389,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   </div>
 </section>
 </main>
+
+<a class="wa-float" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>Fale comigo</span></a>
 
 <footer>
   <div class="wrap">
