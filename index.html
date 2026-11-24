@@ -146,6 +146,41 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 @media (max-width:960px){.name-grid{grid-template-columns:1fr}.name-tower{display:none}}
 @media (max-width:640px){.name-row{grid-template-columns:1fr}.wa-float span{display:none}.wa-float{padding:0;width:56px;justify-content:center}}
 
+/* stack em abas */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.tab-btn{font:500 14px Inter,sans-serif;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:10px 18px;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.tab-btn:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
+.tab-btn[aria-selected="true"]{background:var(--amber);color:#0A1224;border-color:var(--amber)}
+.tab-panel{display:none;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+.tab-panel.active{display:grid;animation:in .45s both}
+.tab-panel h3{font-size:26px;margin:0 0 12px}
+.tab-panel p{color:#C9D1E0;margin:0 0 18px}
+.tab-panel ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.tab-panel li{display:flex;gap:10px;color:#C9D1E0;font-size:15.5px}
+.tab-panel li::before{content:"→";color:var(--amber);font-family:'JetBrains Mono',monospace}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.tool{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);transition:.25s;opacity:0;transform:translateY(8px)}
+.tab-panel.active .tool{animation:in .4s forwards}
+.tool:hover{border-color:var(--amber);color:var(--amber)}
+/* demo de limpeza */
+.clean{border:1px solid rgba(255,255,255,.12);border-radius:22px;background:linear-gradient(180deg,rgba(20,33,61,.8),rgba(10,18,36,.9));overflow:hidden}
+.clean-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.clean-top .mono{font-size:13px;color:var(--muted)}
+.clean-body{display:grid;grid-template-columns:1fr 260px;gap:0}
+.clean table{width:100%;border-collapse:collapse;font-size:14px}
+.clean th{text-align:left;font:500 12px 'JetBrains Mono',monospace;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.04em}
+.clean td{padding:11px 16px;border-bottom:1px solid rgba(255,255,255,.05);transition:background .4s,color .4s,opacity .4s}
+.clean td.bad{color:#FF8A7A;background:rgba(255,90,70,.08)}
+.clean td.fixed{color:var(--green);background:rgba(61,220,151,.08)}
+.clean tr.gone td{opacity:.25;text-decoration:line-through}
+.clean-log{border-left:1px solid var(--line);padding:16px 18px;font:12.5px/2 'JetBrains Mono',monospace;color:var(--muted)}
+.clean-log .ok{color:var(--green)}
+.score{display:flex;gap:18px;margin-top:10px}
+.score b{display:block;font:700 28px 'Space Grotesk',sans-serif;color:var(--text)}
+.score span{font-size:12px;color:var(--muted)}
+@media (max-width:960px){.tab-panel.active{grid-template-columns:1fr}.clean-body{grid-template-columns:1fr}.clean-log{border-left:0;border-top:1px solid var(--line)}}
+@media (max-width:640px){.clean table{font-size:12.5px}.clean th,.clean td{padding:9px 10px}}
+
 /* andon do logo */
 .lamp{animation:lamp 3.2s ease-in-out infinite}
 
@@ -189,7 +224,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <a href="#cases">Resultados</a>
       <a href="#como">Como funciona</a>
       <a href="#sobre">Sobre</a>
-      <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Conversar</a>
+      <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Conversar</a>
     </nav>
   </div>
 </header>
@@ -203,14 +238,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="reveal">
       <span class="kicker">Automação de Processos e Sistemas de Gestão</span>
       <h1>Processos que <span class="grad">rodam sozinhos.</span></h1>
-      <p class="lead">Automatizo planilhas, rotinas e fluxos de trabalho e crio sistemas de gestão sob medida para qualquer processo. Antes de automatizar, melhoro o processo com Lean Six Sigma. Onde faz sentido, uso IA para tirar o trabalho repetitivo da sua equipe.</p>
+      <p class="lead">A Andon Sigma automatiza planilhas, rotinas e fluxos de trabalho e cria sistemas de gestão sob medida para qualquer processo. Antes de automatizar, melhora o processo com Lean Six Sigma. Onde faz sentido, aplica IA para tirar o trabalho repetitivo da sua equipe.</p>
       <div class="cta">
-        <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Quero automatizar um processo
+        <a href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" class="btn btn-amber">Quero automatizar um processo
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#cases" class="btn btn-ghost">Ver o que já foi feito</a>
       </div>
       <div class="tags">
-        <span class="tag">Lean Six Sigma</span><span class="tag">Sistemas web</span><span class="tag">Power BI</span><span class="tag">Agentes de IA</span><span class="tag">APIs</span>
+        <span class="tag">Especialista em IA aplicada</span><span class="tag">Lean Six Sigma</span><span class="tag">Sistemas web</span><span class="tag">Power BI</span><span class="tag">Agentes de IA</span><span class="tag">APIs</span><span class="tag">Limpeza de dados</span><span class="tag">Python</span>
       </div>
     </div>
 
@@ -268,7 +303,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div class="big">Um número só</div><p>Todo mundo olha o mesmo dado, atualizado sozinho, e decide com fato, não com achismo.</p></div>
       <div class="card benefit reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3L20 9M20 4v5h-5M20 12a8 8 0 0 1-14 5.3L4 15M4 20v-5h5"/></svg></div><div class="big">Processo que não para</div><p>O fluxo fica no sistema, não na cabeça de alguém. Férias e trocas de equipe deixam de travar o trabalho.</p></div>
     </div>
-    <div class="inline-cta reveal"><p>Reconheceu alguma dessas dores na sua empresa?</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Conversar no WhatsApp</a></div>
+    <div class="inline-cta reveal"><p>Reconheceu alguma dessas dores na sua empresa?</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Conversar no WhatsApp</a></div>
   </div>
 </section>
 
@@ -288,7 +323,66 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 13h3M19 13h3"/></svg></div><h3>Automação com IA</h3><p>Quando a tarefa exige ler e entender, como e-mails, documentos e pedidos, um agente de IA faz o trabalho e separa para você só o que precisa de decisão.</p><div class="meta">→ rotinas que rodam sozinhas</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3 3 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.7"/></svg></div><h3>IA na prática para equipes</h3><p>Workshop para a equipe usar IA no dia a dia com segurança, com os casos e documentos da própria empresa.</p><div class="meta">→ 3 a 4 horas</div></div>
     </div>
-    <div class="inline-cta reveal"><p>Não sabe por onde começar? Me conta qual tarefa mais toma tempo hoje.</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Falar com a Débora</a></div>
+    <div class="inline-cta reveal"><p>Não sabe por onde começar? Conte qual tarefa mais toma tempo hoje.</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Falar com a Andon Sigma</a></div>
+  </div>
+</section>
+
+<!-- TECNOLOGIAS -->
+<section id="tecnologias">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Tecnologias e ferramentas</span>
+      <h2>Do dado bagunçado ao sistema inteligente.</h2>
+      <p>A Andon Sigma combina engenharia de dados, desenvolvimento de sistemas e inteligência artificial com o rigor do Lean Six Sigma. Escolha uma área para ver o que entra em cada projeto.</p>
+    </div>
+    <div class="tabs reveal" role="tablist" aria-label="Áreas técnicas">
+      <button class="tab-btn" role="tab" aria-selected="true" data-tab="dados">Dados e limpeza</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="sistemas">Sistemas e integrações</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="ia">Inteligência Artificial</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="bi">Indicadores e processos</button>
+    </div>
+    <div class="card reveal" style="padding:32px">
+      <div class="tab-panel active" id="tab-dados" role="tabpanel">
+        <div><h3>Dados confiáveis antes de qualquer automação</h3><p>Planilhas de vários setores raramente conversam. A Andon Sigma limpa, padroniza e une essas bases para que o número seja o mesmo para todo mundo.</p>
+        <ul><li>Remoção de duplicados e linhas vazias</li><li>Padronização de nomes, códigos, datas e valores</li><li>Validação de regras e alerta de inconsistências</li><li>Rotinas de importação (ETL) que rodam sozinhas</li></ul></div>
+        <div class="tools"><span class="tool">Python</span><span class="tool">Pandas</span><span class="tool">Power Query</span><span class="tool">SQL</span><span class="tool">Excel avançado</span><span class="tool">ETL</span><span class="tool">Expressões regulares</span><span class="tool">Validação de dados</span><span class="tool">Deduplicação</span><span class="tool">Ciência de Dados</span></div>
+      </div>
+      <div class="tab-panel" id="tab-sistemas" role="tabpanel">
+        <div><h3>Sistemas web sob medida e integrados</h3><p>Em vez de mais uma planilha, um sistema com login, histórico e regras do seu processo, acessível do computador ou do celular.</p>
+        <ul><li>Cadastros, fluxos de aprovação e prazos com alerta</li><li>Checklists e formulários digitais</li><li>Integração com e-mail, planilhas e outros sistemas</li><li>Banco de dados em nuvem com acesso controlado</li></ul></div>
+        <div class="tools"><span class="tool">JavaScript</span><span class="tool">HTML e CSS</span><span class="tool">Firebase</span><span class="tool">Banco de dados em nuvem</span><span class="tool">APIs REST</span><span class="tool">Webhooks</span><span class="tool">Integração de e-mail</span><span class="tool">GitHub</span><span class="tool">Autenticação de usuários</span></div>
+      </div>
+      <div class="tab-panel" id="tab-ia" role="tabpanel">
+        <div><h3>IA aplicada, com segurança e controle</h3><p>Especialização em engenharia de IA para colocar agentes para trabalhar no que exige ler e entender, sempre com uma pessoa aprovando o que importa.</p>
+        <ul><li>Agentes que leem e-mails e registram no sistema</li><li>Extração de dados de PDFs, notas e documentos</li><li>IA que responde com base nos documentos da empresa (RAG)</li><li>Governança: acesso mínimo, registro e revisão humana</li></ul></div>
+        <div class="tools"><span class="tool">Claude</span><span class="tool">LLMs</span><span class="tool">Agentes de IA</span><span class="tool">RAG</span><span class="tool">Engenharia de prompts</span><span class="tool">Extração de documentos</span><span class="tool">Classificação automática</span><span class="tool">Avaliação de IA</span><span class="tool">Segurança de IA</span></div>
+      </div>
+      <div class="tab-panel" id="tab-bi" role="tabpanel">
+        <div><h3>Indicadores que mostram o problema na hora</h3><p>Painéis que se atualizam sozinhos e métodos que atacam a causa, não o sintoma.</p>
+        <ul><li>Painéis de qualidade, produção, comercial e financeiro</li><li>Modelagem de dados e medidas sob medida</li><li>Projetos DMAIC com ganho medido</li><li>Controle estatístico de processo</li></ul></div>
+        <div class="tools"><span class="tool">Power BI</span><span class="tool">DAX</span><span class="tool">Modelo estrela</span><span class="tool">Lean Six Sigma</span><span class="tool">DMAIC</span><span class="tool">CEP e Cpk</span><span class="tool">Pareto</span><span class="tool">8D</span><span class="tool">Mapeamento de fluxo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO LIMPEZA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Veja na prática</span>
+      <h2>Limpeza de dados em segundos.</h2>
+      <p>Um exemplo ilustrativo do que acontece com uma planilha real: nomes escritos de jeitos diferentes, datas misturadas, valores sem padrão e linhas repetidas.</p>
+    </div>
+    <div class="clean reveal">
+      <div class="clean-top"><span class="mono">reclamacoes_clientes.xlsx · exemplo</span>
+        <button class="btn btn-amber" id="btnClean" type="button" style="height:42px">Limpar dados</button></div>
+      <div class="clean-body">
+        <div style="overflow-x:auto"><table id="cleanTable"><thead><tr><th>Cliente</th><th>Data</th><th>Valor</th><th>Situação</th></tr></thead><tbody></tbody></table></div>
+        <div class="clean-log" id="cleanLog"><div>aguardando execução...</div>
+          <div class="score"><div><b id="scBefore">62%</b><span>dados válidos</span></div></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -306,7 +400,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <ul><li>Reclamações viram registros no sistema sem digitação</li><li>Números internos preenchidos automaticamente</li><li>Acesso ao e-mail só para leitura, com segurança</li><li>A equipe só confere e decide</li></ul></div>
       <div class="card case reveal"><span class="label">digitalização</span><h3>Checklist digital de inspeção</h3><p>Checklist em papel substituído por formulário digital, com histórico e dados prontos para análise.</p>
         <ul><li>Fim do papel e da redigitação</li><li>Histórico pesquisável por item e data</li><li>Base para indicadores de qualidade</li></ul></div>
-      <div class="card case big reveal"><span class="label">lean six sigma</span><h3>Projetos Master Black Belt</h3><p>Programa de melhoria com três frentes, qualidade, logística e produção, pelo método DMAIC. Liderei a frente de qualidade.</p>
+      <div class="card case big reveal"><span class="label">lean six sigma</span><h3>Projetos Master Black Belt</h3><p>Programa de melhoria com três frentes, qualidade, logística e produção, pelo método DMAIC, com a fundadora da Andon Sigma à frente da qualidade.</p>
         <div class="stat"><span class="grad">≈ R$ 1,9 mi</span></div><p class="mono" style="font-size:12.5px;margin-top:2px">em redução de custos no programa</p>
         <ul><li>Liderança da frente de qualidade</li><li>Método DMAIC do diagnóstico ao controle</li></ul></div>
     </div>
@@ -339,10 +433,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <h2>Primeiro o processo, depois a tecnologia.</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n">01</div><h3>Conversa de 20 minutos</h3><p>Você me conta qual tarefa ou planilha mais consome tempo.</p></div>
-      <div class="step reveal"><div class="n">02</div><h3>Mapeamento e melhoria</h3><p>Desenho o fluxo atual, tiro o desperdício e defino o que automatizar.</p></div>
+      <div class="step reveal"><div class="n">01</div><h3>Conversa de 20 minutos</h3><p>Você conta qual tarefa ou planilha mais consome tempo da equipe.</p></div>
+      <div class="step reveal"><div class="n">02</div><h3>Mapeamento e melhoria</h3><p>A Andon Sigma desenha o fluxo atual, elimina o desperdício e define o que automatizar.</p></div>
       <div class="step reveal"><div class="n">03</div><h3>Construção</h3><p>Sistema, automação ou agente construído com os seus dados, com entregas para você validar.</p></div>
-      <div class="step reveal"><div class="n">04</div><h3>Funcionando e com suporte</h3><p>Treino a equipe e acompanho os primeiros meses.</p></div>
+      <div class="step reveal"><div class="n">04</div><h3>Funcionando e com suporte</h3><p>A equipe é treinada e a Andon Sigma acompanha os primeiros meses.</p></div>
     </div>
   </div>
 </section>
@@ -353,9 +447,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap about">
     <div class="photo reveal"><img src="debora-cristina.jpg" alt="Débora Cristina, fundadora da Andon Sigma"><span class="badge">Débora Cristina · fundadora</span></div>
     <div class="reveal">
-      <span class="kicker">Quem está por trás</span>
+      <span class="kicker">Quem lidera a Andon Sigma</span>
       <h2 style="font-size:clamp(32px,4vw,46px);margin:16px 0 24px">Débora Cristina</h2>
-      <p>Sou engenheira mecânica e passei os últimos anos dentro da indústria, primeiro projetando dispositivos e depois liderando a qualidade no atendimento direto a grandes clientes. Foi ali que comecei a trocar planilhas por sistemas e tarefas manuais por automações.</p>
+      <p>Fundadora da Andon Sigma, Débora é engenheira mecânica e passou os últimos anos dentro da indústria, primeiro projetando dispositivos e depois liderando a qualidade no atendimento direto a grandes clientes. Foi ali que começou a trocar planilhas por sistemas e tarefas manuais por automações.</p>
       <p>A Andon Sigma junta três coisas que raramente andam juntas: o método Lean Six Sigma para melhorar o processo, sistemas e automações para ele rodar sozinho, e dados para medir o resultado.</p>
       <div class="chips">
         <span class="chip">Mapeamento e redesenho de processos</span><span class="chip">Automação de planilhas e rotinas</span><span class="chip">Sistemas web sob medida</span><span class="chip">Integração entre sistemas e APIs</span><span class="chip">Power BI e indicadores</span><span class="chip">Agentes de IA com aprovação humana</span><span class="chip">IA que consulta documentos (RAG)</span><span class="chip">Segurança e governança de IA</span>
@@ -378,9 +472,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="final reveal">
       <span class="kicker">Vamos conversar</span>
       <h2>Qual processo você gostaria que rodasse sozinho?</h2>
-      <p>Me conta em 20 minutos, por vídeo, sem compromisso. Eu digo se dá para automatizar e quanto tempo você ganharia.</p>
+      <p>Conte em 20 minutos, por vídeo e sem compromisso. A Andon Sigma avalia o que dá para automatizar e quanto tempo sua equipe ganharia.</p>
       <div class="cta">
-        <a class="btn btn-amber" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener">
+        <a class="btn btn-amber" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>
           WhatsApp (41) 92001-1012</a>
         <a class="btn btn-ghost" href="mailto:contato@andonsigma.com.br">contato@andonsigma.com.br</a>
@@ -390,7 +484,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 </section>
 </main>
 
-<a class="wa-float" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20D%C3%A9bora!%20Vi%20o%20site%20da%20Andon%20Sigma%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>Fale comigo</span></a>
+<a class="wa-float" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg><span>Fale com a gente</span></a>
 
 <footer>
   <div class="wrap">
@@ -424,6 +518,49 @@ function rodar(){
     if(i===linhas.length-1){const c=document.createElement('span');c.className='cursor';d.append(' ',c);setTimeout(rodar,4000)}},i*650));
 }
 rodar();
+
+// abas de tecnologias
+document.querySelectorAll('.tab-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.tab-btn').forEach(x=>x.setAttribute('aria-selected','false'));
+  document.querySelectorAll('.tab-panel').forEach(x=>x.classList.remove('active'));
+  b.setAttribute('aria-selected','true');
+  const pnl=document.getElementById('tab-'+b.dataset.tab); pnl.classList.add('active');
+  pnl.querySelectorAll('.tool').forEach((t,i)=>t.style.animationDelay=(i*60)+'ms');
+}));
+document.querySelectorAll('.tab-panel.active .tool').forEach((t,i)=>t.style.animationDelay=(i*60)+'ms');
+
+// demo de limpeza (dados ilustrativos)
+const raw=[
+ [['CLIENTE A LTDA','bad'],['28/10/26','bad'],['850','bad'],['aberto','bad']],
+ [['Cliente A Ltda.',''],['2026-11-03','bad'],['R$ 1.200,50',''],['Aberto','']],
+ [['cliente b','bad'],['5 nov 2026','bad'],['R$980','bad'],['ENCERRADO','bad']],
+ [[' Cliente C  ','bad'],['07/11/2026',''],['2.310,00','bad'],['Em análise','']],
+ [['Cliente A Ltda.',''],['2026-11-03','bad'],['R$ 1.200,50',''],['Aberto','']],
+ [['','bad'],['','bad'],['','bad'],['','bad']]
+];
+const clean=[
+ [['Cliente A','fixed'],['28/10/2026','fixed'],['R$ 850,00','fixed'],['Aberto','fixed']],
+ [['Cliente A',''],['03/11/2026','fixed'],['R$ 1.200,50',''],['Aberto','']],
+ [['Cliente B','fixed'],['05/11/2026','fixed'],['R$ 980,00','fixed'],['Encerrado','fixed']],
+ [['Cliente C','fixed'],['07/11/2026',''],['R$ 2.310,00','fixed'],['Em análise','']],
+ 'dup','vazia'
+];
+const tb=document.querySelector('#cleanTable tbody'), lg=document.getElementById('cleanLog'), bt=document.getElementById('btnClean');
+function draw(rows){tb.innerHTML='';rows.forEach(r=>{const tr=document.createElement('tr');r.forEach(([v,c])=>{const td=document.createElement('td');td.textContent=v||'—';if(c)td.className=c;tr.appendChild(td)});tb.appendChild(tr)})}
+draw(raw);
+let done=false;
+bt.addEventListener('click',()=>{
+  if(done){draw(raw);lg.innerHTML='<div>aguardando execução...</div><div class="score"><div><b>62%</b><span>dados válidos</span></div></div>';bt.textContent='Limpar dados';done=false;return}
+  bt.disabled=true; lg.innerHTML='';
+  const steps=['→ padronizando nomes de clientes','✓ 3 nomes unificados','→ convertendo datas para dd/mm/aaaa','✓ 3 datas corrigidas','→ formatando valores em reais','✓ 3 valores padronizados','✓ 1 linha duplicada removida','✓ 1 linha vazia removida'];
+  steps.forEach((t,i)=>setTimeout(()=>{const d=document.createElement('div');d.textContent=t;if(t[0]==='✓')d.className='ok';lg.appendChild(d);
+    if(i===steps.length-1){
+      const rows=tb.querySelectorAll('tr');
+      clean.forEach((r,j)=>{const tr=rows[j];if(typeof r==='string'){tr.className='gone';setTimeout(()=>tr.remove(),700)}else{r.forEach(([v,c],k)=>{const td=tr.children[k];td.textContent=v;td.className=c})}});
+      const sc=document.createElement('div');sc.className='score';sc.innerHTML='<div><b>62%</b><span>antes</span></div><div><b style="color:var(--green)">100%</b><span>depois</span></div>';lg.appendChild(sc);
+      bt.disabled=false;bt.textContent='Ver de novo';done=true;
+    }},i*420));
+});
 </script>
 </body>
 </html>
