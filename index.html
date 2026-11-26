@@ -224,7 +224,63 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 .scroll-tick::after{content:attr(aria-label);position:absolute;right:18px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;color:var(--text);background:rgba(10,18,36,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px;opacity:0;pointer-events:none;transition:opacity .2s}
 .scroll-tick:hover::after{opacity:1}
 @media (max-width:640px){.scroll-rail{right:4px;width:3px;top:84px;bottom:96px}.scroll-tick{display:none}.scroll-dot{width:9px;height:9px;margin:-4.5px 0 0 -4.5px}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* Para quem: lista em linhas */
+.seg-list{border-top:1px solid var(--line)}
+.seg{display:grid;grid-template-columns:56px 56px 1.1fr 1fr;gap:28px;align-items:center;padding:28px 8px;border-bottom:1px solid var(--line);transition:background .3s,padding .3s}
+.seg:hover{background:linear-gradient(90deg,rgba(242,169,0,.06),transparent 70%);padding-left:18px}
+.seg-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:var(--amber)}
+.seg-ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:rgba(242,169,0,.1);border:1px solid rgba(242,169,0,.25);color:var(--amber)}
+.seg-ico svg{width:26px;height:26px}
+.seg-who h3{font-size:22px;margin:0 0 6px}
+.seg-who p{margin:0;color:var(--muted);font-size:15.5px}
+.seg-lbl{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.seg-pills{display:flex;flex-wrap:wrap;gap:8px}
+.seg-pill{font-size:13.5px;padding:6px 12px;border-radius:999px;border:1px solid rgba(61,220,151,.35);color:var(--green);background:rgba(61,220,151,.07)}
+@media (max-width:960px){.seg{grid-template-columns:44px 1fr;gap:16px 18px}.seg-n{display:none}.seg-ico{grid-row:span 2;align-self:start;width:44px;height:44px}.seg-sol{grid-column:2}}
+/* Serviços: bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;grid-auto-flow:dense}
+.bento .b-big{grid-column:span 2;grid-row:span 2;background:linear-gradient(160deg,rgba(242,169,0,.09),var(--card) 55%);display:flex;flex-direction:column}
+.bento .b-big h3{font-size:30px}
+.bento .b-big p{font-size:17px}
+.bento .b-big .meta{margin-top:auto}
+.bento .b-wide{grid-column:span 2;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto 1fr;column-gap:22px;align-items:start;align-content:start}
+.bento .b-wide .meta{align-self:end;grid-column:2}
+.b-chips{grid-column:2;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.b-chips span{font-size:13.5px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text)}
+.bento .b-wide .ico{grid-row:span 4}
+.bento .b-wide h3{margin-top:2px}
+.bento .b-accent{background:linear-gradient(150deg,rgba(61,220,151,.12),var(--card) 60%);border-color:rgba(61,220,151,.25)}
+.bento .b-accent .ico{background:rgba(61,220,151,.1);border-color:rgba(61,220,151,.3);color:var(--green)}
+.b-viz{flex:1;display:flex;flex-direction:column;margin:24px 0;border:1px solid var(--line);border-radius:14px;background:rgba(10,18,36,.55);padding:14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px}
+.b-row{display:grid;grid-template-columns:1fr 1fr 1fr;padding:9px 10px;border-radius:8px;color:var(--text)}
+.b-row.h{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em}
+.b-row:not(.h){background:rgba(255,255,255,.03);margin-top:6px;opacity:0;animation:brow 6s ease-in-out infinite}
+.b-row:nth-child(3){animation-delay:.3s}.b-row:nth-child(4){animation-delay:.6s}.b-row:nth-child(5){animation-delay:.9s}.b-row:nth-child(6){animation-delay:1.2s}
+.b-row .ok{color:var(--green)}
+.b-run{margin-top:auto;padding-top:12px;color:var(--amber);display:flex;align-items:center;gap:8px;font-size:12px}
+.b-run i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes brow{0%,8%{opacity:0;transform:translateX(-8px)}16%,88%{opacity:1;transform:none}100%{opacity:0}}
+@media (max-width:960px){.bento{grid-template-columns:1fr 1fr}.bento .b-big{grid-row:auto}}
+@media (max-width:640px){.bento{grid-template-columns:1fr}.bento .b-big,.bento .b-wide{grid-column:auto}.bento .b-wide{display:block}}
+/* Catálogo: acordeão */
+.cats{border-top:1px solid var(--line)}
+.cat{border-bottom:1px solid var(--line)}
+.cat summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:56px 1fr auto 28px;gap:20px;align-items:center;padding:24px 8px;transition:background .25s}
+.cat summary::-webkit-details-marker{display:none}
+.cat summary:hover{background:linear-gradient(90deg,rgba(242,169,0,.05),transparent 70%)}
+.cat-n{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:var(--amber)}
+.cat-t{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600}
+.cat-c{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--muted)}
+.cat-x{position:relative;width:20px;height:20px}
+.cat-x::before,.cat-x::after{content:"";position:absolute;left:0;top:9px;width:20px;height:2px;background:var(--amber);transition:transform .3s}
+.cat-x::after{transform:rotate(90deg)}
+.cat[open] .cat-x::after{transform:rotate(0)}
+.cat[open] .cat-t{color:var(--amber)}
+.cat ul{margin:0;padding:0 8px 28px 84px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 32px}
+.cat li{position:relative;padding-left:20px;color:var(--muted);font-size:15.5px;line-height:1.55}
+.cat li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--green)}
+@media (max-width:760px){.cat summary{grid-template-columns:36px 1fr 24px;gap:12px}.cat-c{display:none}.cat-t{font-size:18px}.cat ul{grid-template-columns:1fr;padding-left:56px}}
+@media (prefers-reduced-motion:reduce){.b-row:not(.h){opacity:1}*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
 @media (max-width:960px){
   .hero-grid,.about{grid-template-columns:1fr}
@@ -333,11 +389,11 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
       <span class="kicker">Para quem é</span>
       <h2>Se tem tarefa repetida, tem o que automatizar.</h2>
     </div>
-    <div class="grid4">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></svg></div><h3>Clínicas, salões e consultórios</h3><p>Agenda marcada pelo WhatsApp, cliente que falta e horas respondendo mensagem.</p><div class="meta">agendamento online, lembretes e atendimento automático</div></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9h18v11H3zM9 20v-6h6v6"/></svg></div><h3>Comércio e escritórios</h3><p>Estoque, financeiro e vendas controlados em planilha, com relatório montado na mão todo mês.</p><div class="meta">planilhas automáticas, relatórios e painéis de vendas</div></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4V10l6 4V5h6v16zM3 21h18"/></svg></div><h3>Indústrias</h3><p>Qualidade, reclamações, 8D e indicadores espalhados em planilhas e e-mails.</p><div class="meta">sistemas de gestão, painéis de qualidade e Lean Six Sigma</div></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg></div><h3>Qualquer empresa</h3><p>E-mails, documentos e pedidos que alguém precisa ler e lançar no sistema todo dia.</p><div class="meta">agentes de IA e integração entre sistemas</div></div>
+    <div class="seg-list">
+      <div class="seg reveal"><span class="seg-n">01</span><div class="seg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2"/></svg></div><div class="seg-who"><h3>Clínicas, salões e consultórios</h3><p>Agenda marcada pelo WhatsApp, cliente que falta e horas respondendo mensagem.</p></div><div class="seg-sol"><span class="seg-lbl">A Andon resolve com</span><div class="seg-pills"><span class="seg-pill">agendamento online</span><span class="seg-pill">lembretes</span><span class="seg-pill">atendimento automático</span></div></div></div>
+      <div class="seg reveal"><span class="seg-n">02</span><div class="seg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.5-5h15L21 9M3 9h18v11H3zM9 20v-6h6v6"/></svg></div><div class="seg-who"><h3>Comércio e escritórios</h3><p>Estoque, financeiro e vendas controlados em planilha, com relatório montado na mão todo mês.</p></div><div class="seg-sol"><span class="seg-lbl">A Andon resolve com</span><div class="seg-pills"><span class="seg-pill">planilhas automáticas</span><span class="seg-pill">relatórios</span><span class="seg-pill">painéis de vendas</span></div></div></div>
+      <div class="seg reveal"><span class="seg-n">03</span><div class="seg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l6 4V10l6 4V5h6v16zM3 21h18"/></svg></div><div class="seg-who"><h3>Indústrias</h3><p>Qualidade, reclamações, 8D e indicadores espalhados em planilhas e e-mails.</p></div><div class="seg-sol"><span class="seg-lbl">A Andon resolve com</span><div class="seg-pills"><span class="seg-pill">sistemas de gestão</span><span class="seg-pill">painéis de qualidade</span><span class="seg-pill">Lean Six Sigma</span></div></div></div>
+      <div class="seg reveal"><span class="seg-n">04</span><div class="seg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/></svg></div><div class="seg-who"><h3>Qualquer empresa</h3><p>E-mails, documentos e pedidos que alguém precisa ler e lançar no sistema todo dia.</p></div><div class="seg-sol"><span class="seg-lbl">A Andon resolve com</span><div class="seg-pills"><span class="seg-pill">agentes de IA</span><span class="seg-pill">integração entre sistemas</span></div></div></div>
     </div>
   </div>
 </section>
@@ -367,17 +423,38 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
       <span class="kicker">Serviços</span>
       <h2>Do processo bagunçado ao trabalho que roda sozinho.</h2>
     </div>
-    <div class="grid4">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 10h16M10 4v16"/></svg></div><h3>Automação de processos e planilhas</h3><p>O que hoje é feito à mão em planilha vira fluxo automático: importação, cálculo, conferência e envio, sem copiar e colar.</p><div class="meta">→ resultado em semanas</div></div>
+    <div class="bento">
+      <div class="card reveal b-big"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 10h16M10 4v16"/></svg></div><h3>Automação de processos e planilhas</h3><p>O que hoje é feito à mão em planilha vira fluxo automático: importação, cálculo, conferência e envio, sem copiar e colar.</p><div class="b-viz" aria-hidden="true"><div class="b-row h"><span>Loja</span><span>Vendas</span><span>Status</span></div><div class="b-row"><span>Centro</span><span>12.480</span><span class="ok">✓ enviado</span></div><div class="b-row"><span>Norte</span><span>9.315</span><span class="ok">✓ enviado</span></div><div class="b-row"><span>Sul</span><span>14.020</span><span class="ok">✓ enviado</span></div><div class="b-row"><span>Oeste</span><span>11.240</span><span class="ok">✓ enviado</span></div><div class="b-row"><span>Online</span><span>18.630</span><span class="ok">✓ enviado</span></div><div class="b-run"><i></i>rodando sozinho · todo dia às 8h</div></div><div class="meta">→ resultado em semanas</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M7 9l3 2-3 2M13 13h4"/></svg></div><h3>Sistemas de gestão do zero</h3><p>Sistemas web sob medida para qualquer processo: estoque, financeiro, compras, atendimento, qualidade, manutenção, projetos. Do jeito que a sua empresa trabalha.</p><div class="meta">→ sob medida + suporte mensal</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg></div><h3>Melhoria de processos</h3><p>Mapeamento e redesenho de fluxos com Lean Six Sigma antes de automatizar. Automatizar processo ruim só deixa o erro mais rápido.</p><div class="meta">→ diagnóstico ou projeto completo</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Painéis e indicadores</h3><p>Power BI com os números que importam, atualizados sozinhos, para decidir com dado e não com achismo.</p><div class="meta">→ entrega em 3 a 4 semanas</div></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 13h3M19 13h3"/></svg></div><h3>Automação com IA</h3><p>Quando a tarefa exige ler e entender, como e-mails, documentos e pedidos, um agente de IA faz o trabalho e separa para você só o que precisa de decisão.</p><div class="meta">→ rotinas que rodam sozinhas</div></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3 3 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.7"/></svg></div><h3>IA na prática para equipes</h3><p>Workshop para a equipe usar IA no dia a dia com segurança, com os casos e documentos da própria empresa.</p><div class="meta">→ 3 a 4 horas</div></div>
+      <div class="card reveal b-accent"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6M2 13h3M19 13h3"/></svg></div><h3>Automação com IA</h3><p>Quando a tarefa exige ler e entender, como e-mails, documentos e pedidos, um agente de IA faz o trabalho e separa para você só o que precisa de decisão.</p><div class="meta">→ rotinas que rodam sozinhas</div></div>
+      <div class="card reveal b-wide"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.5a3 3 0 0 1 0 7M21 20c0-2.6-1.6-4.8-4-5.7"/></svg></div><h3>IA na prática para equipes</h3><p>Workshop para a equipe usar IA no dia a dia com segurança, com os casos e documentos da própria empresa.</p><div class="b-chips"><span>Prompts para o dia a dia</span><span>Casos da própria empresa</span><span>Segurança dos dados</span><span>Prática com a equipe</span></div><div class="meta">→ 3 a 4 horas</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></div><h3>Agendamento e atendimento automático</h3><p>Seu cliente marca o horário sozinho, pelo site ou pelo Instagram, a qualquer hora, e recebe lembrete automático. Menos mensagem para responder e menos falta.</p><div class="meta">→ pronto em poucos dias</div></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h6M7 16h4"/></svg></div><h3>Sites e páginas de venda</h3><p>Sites e landing pages rápidos, bonitos no celular e ligados ao seu WhatsApp e à sua agenda.</p><div class="meta">→ entrega em 1 a 2 semanas</div></div>
     </div>
     <div class="inline-cta reveal"><p>Não sabe por onde começar? Conte qual tarefa mais toma tempo hoje.</p><a class="btn btn-wa" href="https://wa.me/5541920011012?text=Ol%C3%A1%2C%20Andon%20Sigma!%20Vi%20o%20site%20e%20quero%20automatizar%20um%20processo." target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></svg>Falar com a Andon Sigma</a></div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section id="catalogo" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker">Tudo o que já entregamos</span>
+      <h2>Catálogo completo.</h2>
+      <p>Além dos serviços principais, a Andon Sigma também atende demandas pontuais. Abra uma área para ver o que entra nela.</p>
+    </div>
+    <div class="cats reveal">
+      <details class="cat" open><summary><span class="cat-n">01</span><span class="cat-t">Automação de processos e planilhas</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Planilhas automatizadas em Excel (Macros e VBA) e Google Sheets (Apps Script)</li><li>Importação, cálculo, conferência e envio de dados sem copiar e colar</li><li>Formulários e checklists digitais no lugar do papel</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">02</span><span class="cat-t">Dados e indicadores na indústria</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Indicadores de qualidade, produção e custos usados na gestão do dia a dia: PPM, refugo, entregas no prazo, custo da não qualidade</li><li>Dashboards em Power BI que se atualizam sozinhos, com metas, filtros e Pareto</li><li>Análise de dados com Python e ferramentas da qualidade (CEP, Pareto, causa raiz) para decidir com fato</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">03</span><span class="cat-t">Sistemas, automações e integrações</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Sistemas web sob medida: qualidade, compras, estoque, manutenção, atendimento, CRM</li><li>Integrações por API e webhooks, extração de dados de PDFs e sites</li><li>Correções e melhorias em sistemas que já estão no ar</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">04</span><span class="cat-t">Agentes de IA e chatbots</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Agentes de IA que leem e-mails, documentos e pedidos e registram tudo no sistema</li><li>Chatbots para WhatsApp e Instagram com atendimento, agendamento e lembretes</li><li>IA que responde com base nos documentos da empresa (RAG), com aprovação humana</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">05</span><span class="cat-t">Sites, landing pages e lojas virtuais</span><span class="cat-c">4 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Sites e landing pages em WordPress/Elementor ou em código, responsivos e publicados</li><li>Lojas na Nuvemshop e na Shopee, páginas de venda na Hotmart</li><li>Google Tag Manager, Meta Pixel e eventos de conversão</li><li>Repaginação, correções e SEO de sites existentes</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">06</span><span class="cat-t">Aplicativos</span><span class="cat-c">2 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Publicação e atualização de apps na App Store e no Google Play</li><li>Correções, novas telas e funções em apps existentes</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">07</span><span class="cat-t">Google Ads e marketplaces</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Estruturação e otimização de campanhas no Google Ads</li><li>Cadastro e otimização de anúncios no Mercado Livre e na Shopee</li><li>Otimização de perfil no LinkedIn</li></ul></details>
+      <details class="cat"><summary><span class="cat-n">08</span><span class="cat-t">Apresentações, e-books e design</span><span class="cat-c">3 serviços</span><span class="cat-x" aria-hidden="true"></span></summary><ul><li>Apresentações corporativas, pitch decks e slides acadêmicos</li><li>Diagramação de e-books, revistas, portfólios em PDF e cardápios</li><li>Logotipos, identidade visual, rótulos e criativos para redes sociais</li></ul></details>
+    </div>
   </div>
 </section>
 
@@ -647,7 +724,7 @@ bt.addEventListener('click',()=>{
 <script>
 (function(){
   var rail=document.querySelector('.scroll-rail'),fill=rail.querySelector('.scroll-fill'),dot=rail.querySelector('.scroll-dot');
-  var secs=[['para-quem','Para quem'],['servicos','Serviços'],['tecnologias','Tecnologias'],['cases','Resultados'],['nome','O nome'],['como','Como funciona'],['sobre','Sobre'],['contato','Contato']];
+  var secs=[['para-quem','Para quem'],['servicos','Serviços'],['catalogo','Catálogo'],['tecnologias','Tecnologias'],['cases','Resultados'],['nome','O nome'],['como','Como funciona'],['sobre','Sobre'],['contato','Contato']];
   var ticks=[];
   secs.forEach(function(x){var el=document.getElementById(x[0]);if(!el)return;var a=document.createElement('a');a.className='scroll-tick';a.href='#'+x[0];a.setAttribute('aria-label',x[1]);rail.appendChild(a);ticks.push([a,el]);});
   var max=1,ticking=false;
