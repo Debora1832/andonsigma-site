@@ -55,7 +55,7 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backd
 .links .btn{height:42px;color:#0A1224}
 
 /* hero */
-.hero{position:relative;padding:96px 0 110px}
+.hero{position:relative;padding:96px 0 64px}
 .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
 .hero h1{font-size:clamp(42px,6vw,72px);font-weight:700;margin:22px 0 22px}
 .hero p.lead{font-size:19px;color:var(--muted);max-width:580px;margin:0 0 34px}
@@ -80,7 +80,7 @@ header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backd
 .cursor{display:inline-block;width:8px;height:14px;background:var(--amber);vertical-align:middle;animation:blink 1s steps(1) infinite}
 
 /* seções */
-section{position:relative;padding:110px 0}
+section{position:relative;padding:64px 0}
 .head{max-width:760px;margin-bottom:56px}
 .head h2{font-size:clamp(32px,4.2vw,48px);margin-top:16px}
 .head p{color:var(--muted);font-size:18px;margin:16px 0 0}
@@ -280,6 +280,34 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 .cat li{position:relative;padding-left:20px;color:var(--muted);font-size:15.5px;line-height:1.55}
 .cat li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--green)}
 @media (max-width:760px){.cat summary{grid-template-columns:36px 1fr 24px;gap:12px}.cat-c{display:none}.cat-t{font-size:18px}.cat ul{grid-template-columns:1fr;padding-left:56px}}
+/* Resultados em órbita ao redor da torre */
+.orbit{position:relative;height:640px;perspective:1600px;margin-top:10px}
+.orb-tower{position:absolute;left:50%;top:50%;width:260px;height:260px;transform:translate(-50%,-56%);z-index:3;pointer-events:none}
+.orb-tower svg{position:relative;width:100%;height:100%;filter:drop-shadow(0 0 18px rgba(242,169,0,.35))}
+.orb-glow{position:absolute;inset:-60%;border-radius:50%;background:radial-gradient(closest-side,rgba(242,169,0,.28),rgba(61,220,151,.08) 55%,transparent);animation:orbglow 4s ease-in-out infinite}
+.orb-lamp{animation:lamp 2.4s ease-in-out infinite}
+@keyframes orbglow{50%{opacity:.6;transform:scale(.92)}}
+.orb-ring{position:absolute;left:4%;width:92%;top:50%;height:240px;transform:translateY(-30%);overflow:visible;z-index:0;pointer-events:none}
+.orb-ring ellipse{fill:none;stroke:rgba(242,169,0,.18);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.orb-ring .r2{stroke:rgba(242,169,0,.7);stroke-dasharray:60 1400;animation:orbdash 9s linear infinite}
+@keyframes orbdash{to{stroke-dashoffset:-1460}}
+.orb-card{position:absolute;left:50%;top:50%;width:380px;margin:0;will-change:transform,opacity;transition:border-color .3s,background .3s}
+.orb-card.big .stat span{font-size:40px}
+.orbit .orb-card{background:linear-gradient(180deg,#131D37,#0E1730);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.orbit .orb-card.big{background:linear-gradient(135deg,#2A2716,#131D37 55%,#0E1730)}
+.orbit.flat .orb-card{box-shadow:none}
+.orb-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:8px}
+.orb-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);font-size:18px;cursor:pointer;transition:.2s}
+.orb-btn:hover{border-color:var(--amber);color:var(--amber)}
+.orb-dots{display:flex;gap:10px}
+.orb-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.2);cursor:pointer;transition:.3s}
+.orb-dots button.on{background:var(--amber);width:28px;border-radius:6px}
+/* telas menores: torre em cima e cards deslizando de lado */
+.orbit.flat{height:auto;perspective:none;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:250px 4px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.orbit.flat::-webkit-scrollbar{display:none}
+.orbit.flat .orb-tower{top:0;width:200px;height:200px;transform:translateX(-50%)}
+.orbit.flat .orb-ring{display:none}
+.orbit.flat .orb-card{position:relative;left:auto;top:auto;flex:0 0 86%;scroll-snap-align:center;transform:none!important;opacity:1!important;filter:none!important}
 @media (prefers-reduced-motion:reduce){.b-row:not(.h){opacity:1}*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
 @media (max-width:960px){
@@ -291,8 +319,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
   .about .photo{max-width:360px}
 }
 @media (max-width:640px){
-  section{padding:76px 0}
-  .hero{padding:64px 0 80px}
+  section{padding:44px 0}
+  .hero{padding:64px 0 44px}
   .grid3,.grid2,.grid4,.steps,.creds{grid-template-columns:1fr}
   .final{padding:52px 22px}
   .brand{font-size:19px}
@@ -383,7 +411,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 </section>
 
 <!-- PARA QUEM -->
-<section id="para-quem" style="padding-top:0">
+<section id="para-quem">
   <div class="wrap">
     <div class="head reveal">
       <span class="kicker">Para quem é</span>
@@ -399,7 +427,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 </section>
 
 <!-- BENEFÍCIOS -->
-<section style="padding-top:0">
+<section>
   <div class="wrap">
     <div class="head reveal">
       <span class="kicker">O que muda quando o processo roda sozinho</span>
@@ -438,7 +466,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 </section>
 
 <!-- CATÁLOGO -->
-<section id="catalogo" style="padding-top:0">
+<section id="catalogo">
   <div class="wrap">
     <div class="head reveal">
       <span class="kicker">Tudo o que já entregamos</span>
@@ -498,7 +526,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
 </section>
 
 <!-- DEMO LIMPEZA -->
-<section style="padding-top:0">
+<section>
   <div class="wrap">
     <div class="head reveal">
       <span class="kicker">Veja na prática</span>
@@ -524,16 +552,20 @@ footer{border-top:1px solid var(--line);padding:56px 0 100px;color:var(--muted);
       <span class="kicker">O que já foi feito</span>
       <h2>Sistemas e automações que já rodam no dia a dia de uma indústria.</h2>
     </div>
-    <div class="grid2">
-      <div class="card case reveal"><span class="label">sistema de gestão</span><h3>Portal de gestão da qualidade</h3><p>Sistema web criado do zero para substituir planilhas de controle de reclamações de clientes.</p>
+    <div class="orbit reveal" aria-roledescription="carrossel" aria-label="Resultados">
+      <svg class="orb-ring" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="500" cy="120" rx="490" ry="110"/><ellipse class="r2" cx="500" cy="120" rx="490" ry="110"/></svg>
+      <div class="orb-tower" aria-hidden="true"><div class="orb-glow"></div><svg viewBox="0 0 100 100"><rect x="36" y="6" width="28" height="5" rx="2.5" fill="#E8ECF4"/><g class="orb-lamp"><rect x="31" y="14" width="38" height="26" rx="6" fill="#F2A900"/><text x="50" y="34.5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="25" font-weight="700" fill="#0A1224">σ</text></g><rect x="33" y="44" width="34" height="15" rx="4" fill="rgba(61,220,151,.9)"/><rect x="33" y="63" width="34" height="15" rx="4" fill="rgba(232,236,244,.85)"/><rect x="46.5" y="80" width="7" height="9" fill="#E8ECF4"/><rect x="34" y="89" width="32" height="5" rx="2.5" fill="#E8ECF4"/></svg></div>
+      <div class="card case orb-card"><span class="label">sistema de gestão</span><h3>Portal de gestão da qualidade</h3><p>Sistema web criado do zero para substituir planilhas de controle de reclamações de clientes.</p>
         <ul><li>Registro de não conformidades por cliente, com tratativa e 8D integrado</li><li>Custo da não qualidade e controle de notas de terceiros</li><li>Fluxo de devolução com etapas e responsáveis</li><li>Visão geral com indicadores na página inicial</li></ul></div>
-      <div class="card case reveal"><span class="label">agente de IA</span><h3>Agente que lê e-mails e atualiza o sistema</h3><p>Uma rotina de IA lê as reclamações que chegam dos clientes por e-mail e as registra no portal sozinha.</p>
+      <div class="card case orb-card"><span class="label">agente de IA</span><h3>Agente que lê e-mails e atualiza o sistema</h3><p>Uma rotina de IA lê as reclamações que chegam dos clientes por e-mail e as registra no portal sozinha.</p>
         <ul><li>Reclamações viram registros no sistema sem digitação</li><li>Números internos preenchidos automaticamente</li><li>Acesso ao e-mail só para leitura, com segurança</li><li>A equipe só confere e decide</li></ul></div>
-      <div class="card case reveal"><span class="label">digitalização</span><h3>Checklist digital de inspeção</h3><p>Checklist em papel substituído por formulário digital, com histórico e dados prontos para análise.</p>
+      <div class="card case orb-card"><span class="label">digitalização</span><h3>Checklist digital de inspeção</h3><p>Checklist em papel substituído por formulário digital, com histórico e dados prontos para análise.</p>
         <ul><li>Fim do papel e da redigitação</li><li>Histórico pesquisável por item e data</li><li>Base para indicadores de qualidade</li></ul></div>
-      <div class="card case big reveal"><span class="label">lean six sigma</span><h3>Projetos Master Black Belt</h3><p>Programa de melhoria com três frentes, qualidade, logística e produção, pelo método DMAIC, com a fundadora da Andon Sigma à frente da qualidade.</p>
+      <div class="card case big orb-card"><span class="label">lean six sigma</span><h3>Projetos Master Black Belt</h3><p>Programa de melhoria com três frentes, qualidade, logística e produção, pelo método DMAIC, com a fundadora da Andon Sigma à frente da qualidade.</p>
         <div class="stat"><span class="grad">≈ R$ 1,9 mi</span></div><p class="mono" style="font-size:12.5px;margin-top:2px">em redução de custos no programa</p>
         <ul><li>Liderança da frente de qualidade</li><li>Método DMAIC do diagnóstico ao controle</li></ul></div>
+    </div>
+    <div class="orb-nav"><button class="orb-btn" data-d="-1" aria-label="Resultado anterior">&#8592;</button><div class="orb-dots"></div><button class="orb-btn" data-d="1" aria-label="Próximo resultado">&#8594;</button></div>
     </div>
   </div>
 </section>
@@ -758,6 +790,39 @@ bt.addEventListener('click',()=>{
   size();window.addEventListener('resize',size);
   if('IntersectionObserver' in window)new IntersectionObserver(function(e){run=e[0].isIntersecting;}).observe(c);
   requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){
+  var orb=document.querySelector('.orbit'); if(!orb) return;
+  var cards=[].slice.call(orb.querySelectorAll('.orb-card')), n=cards.length, dotsBox=document.querySelector('.orb-dots');
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var target=0, cur=0, hover=false, flat=false, timer=null, raf=null;
+  var dots=cards.map(function(c,i){var b=document.createElement('button');b.setAttribute('aria-label','Resultado '+(i+1));b.onclick=function(){go(i-mod(target))};dotsBox.appendChild(b);return b;});
+  function mod(x){return ((Math.round(x)%n)+n)%n;}
+  function go(d){target+=d; if(flat){var c=cards[mod(target)];orb.scrollTo({left:c.offsetLeft-(orb.clientWidth-c.offsetWidth)/2,behavior:still?'auto':'smooth'});} loop(); paint();}
+  function paint(){var k=mod(target);dots.forEach(function(b,i){b.classList.toggle('on',i===k);});}
+  function place(){
+    var W=orb.clientWidth, Rx=Math.min(W*0.43,490), step=2*Math.PI/n;
+    cards.forEach(function(c,i){
+      var a=(i-cur)*step+Math.PI/4, x=Math.sin(a)*Rx, z=Math.cos(a), f=(z+1)/2;
+      var sc=0.66+0.34*f, y=z*70-20;
+      c.style.transform='translate(-50%,-50%) translate('+x.toFixed(1)+'px,'+y.toFixed(1)+'px) scale('+sc.toFixed(3)+') rotateY('+(-Math.sin(a)*14).toFixed(1)+'deg)';
+      c.style.opacity=(0.22+0.78*Math.pow(f,1.6)).toFixed(3);
+      c.style.filter=z<0.2?'blur('+((0.2-z)*2.2).toFixed(2)+'px)':'none';
+      c.style.zIndex=z>0?5:1;
+      c.style.pointerEvents=z>0.4?'auto':'none';
+    });
+  }
+  function loop(){ if(flat) return; cancelAnimationFrame(raf); (function f(){ var d=target-cur; cur+= still?d:d*0.08; if(Math.abs(d)<0.001)cur=target; place(); if(cur!==target) raf=requestAnimationFrame(f); })(); }
+  function mode(){ var f=window.innerWidth<900; if(f===flat) return; flat=f; orb.classList.toggle('flat',flat); cards.forEach(function(c){c.style.zIndex='';c.style.pointerEvents='';}); if(!flat){cur=target;place();} }
+  document.querySelectorAll('.orb-btn').forEach(function(b){b.onclick=function(){go(+b.dataset.d);};});
+  orb.addEventListener('mouseenter',function(){hover=true;}); orb.addEventListener('mouseleave',function(){hover=false;});
+  orb.addEventListener('focusin',function(){hover=true;}); orb.addEventListener('focusout',function(){hover=false;});
+  orb.addEventListener('scroll',function(){ if(!flat) return; var mid=orb.scrollLeft+orb.clientWidth/2,best=0,bd=1e9; cards.forEach(function(c,i){var d=Math.abs(c.offsetLeft+c.offsetWidth/2-mid); if(d<bd){bd=d;best=i;}}); target=best; paint(); },{passive:true});
+  if(!still) timer=setInterval(function(){ if(!hover&&!document.hidden&&!flat) go(1); },4500);
+  window.addEventListener('resize',function(){mode(); if(!flat) place();});
+  mode(); place(); paint();
 })();
 </script>
 </body>
